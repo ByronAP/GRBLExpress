@@ -1,0 +1,118 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:types="clr-namespace:GrblExpress.Common.Types;assembly=GrblExpress.Common"
+             x:DataType="local:DroControl"
+             x:Class="GrblExpress.Controls.DroControl">
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="Vertical">
+        <!-- X Axis -->
+        <Grid Name="XAxis" IsVisible="{Binding XVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="X:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroX" Width="100" Margin="0,5,0,5" Grid.Column="1" Value="{Binding X, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Name="DroX0Btn" Content="0" Margin="5,5,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroX}"/>
+        </Grid>
+        <!-- Y Axis -->
+        <Grid IsVisible="{Binding YVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Y:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroY" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding Y, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroY}"/>
+        </Grid>
+        <!-- Z Axis -->
+        <Grid IsVisible="{Binding ZVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Z:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroZ" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding Z, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroZ}"/>
+        </Grid>
+        <!-- A Axis -->
+        <Grid IsVisible="{Binding AVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="A:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroA" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding A, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroA}"/>
+        </Grid>
+        <!-- B Axis -->
+        <Grid IsVisible="{Binding BVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="B:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroB" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding B, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroB}"/>
+        </Grid>
+        <!-- C Axis -->
+        <Grid IsVisible="{Binding CVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="C:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroC" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding C, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroC}"/>
+        </Grid>
+        <!-- U Axis -->
+        <Grid IsVisible="{Binding UVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="U:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroU" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding U, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroU}"/>
+        </Grid>
+        <!-- V Axis -->
+        <Grid IsVisible="{Binding VVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="V:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroV" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding V, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroV}"/>
+        </Grid>
+        <!-- W Axis -->
+        <Grid IsVisible="{Binding WVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="W:" VerticalAlignment="Center" Grid.Column="0"/>
+          <ui:NumberBox Name="DroW" Width="100" Margin="0,0,0,5" Grid.Column="1" Value="{Binding W, Mode=TwoWay}" ValueChanged="NumberBox_ValueChanged"/>
+          <Button Content="0" Margin="5,0,0,5" Grid.Column="2" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroW}"/>
+        </Grid>
+        <!-- Zero All Button -->
+        <Button Content="Zero All" Margin="0,0,0,4" HorizontalAlignment="Center" Command="{Binding ZeroCommand}" CommandParameter="{x:Static types:GenericCommand.ZeroAll}"/>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

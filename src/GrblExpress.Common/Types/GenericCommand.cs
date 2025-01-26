@@ -1,0 +1,40 @@
+﻿namespace GrblExpress.Common.Types
+{
+    public enum GenericCommand
+    {
+        None,
+        Reset,
+        Unlock,
+        CycleStart,
+        CycleStop,
+        FeedHold,
+        FeedRewind,
+        JogStop,
+        JogLeft,
+        JogRight,
+        JogUp,
+        JogDown,
+        JogAltUp,
+        JogAltDown,
+        HomeX,
+        HomeY,
+        HomeZ,
+        HomeA,
+        HomeB,
+        HomeC,
+        HomeU,
+        HomeV,
+        HomeW,
+        HomeAll,
+        ZeroX,
+        ZeroY,
+        ZeroZ,
+        ZeroA,
+        ZeroB,
+        ZeroC,
+        ZeroU,
+        ZeroV,
+        ZeroW,
+        ZeroAll
+    }
+}

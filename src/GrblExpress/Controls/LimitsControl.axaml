@@ -1,0 +1,133 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             x:Class="GrblExpress.Controls.LimitsControl"
+             x:DataType="local:LimitsControl">
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="Vertical">
+        <!-- X Axis -->
+        <Grid Name="XAxis" IsVisible="{Binding XVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="X:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding XMin}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding XMax}"/>
+        </Grid>
+        <!-- Y Axis -->
+        <Grid IsVisible="{Binding YVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Y:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding YMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding YMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- Z Axis -->
+        <Grid IsVisible="{Binding ZVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="Z:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding ZMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding ZMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- A Axis -->
+        <Grid IsVisible="{Binding AVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="A:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding AMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding AMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- B Axis -->
+        <Grid IsVisible="{Binding BVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="B:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding BMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding BMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- C Axis -->
+        <Grid IsVisible="{Binding CVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="C:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding CMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding CMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- U Axis -->
+        <Grid IsVisible="{Binding UVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="U:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding UMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding UMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- V Axis -->
+        <Grid IsVisible="{Binding VVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="V:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding VMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding VMax, Mode=TwoWay}"/>
+        </Grid>
+        <!-- W Axis -->
+        <Grid IsVisible="{Binding WVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="W:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="1" IsReadOnly="{Binding ReadOnly}" Text="{Binding WMin, Mode=TwoWay}"/>
+          <TextBlock Text="-" VerticalAlignment="Center" Grid.Column="2"/>
+          <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding WMax, Mode=TwoWay}"/>
+        </Grid>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

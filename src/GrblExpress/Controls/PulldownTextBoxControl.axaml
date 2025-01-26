@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             x:DataType="local:PulldownTextBoxControl"
+             x:Class="GrblExpress.Controls.PulldownTextBoxControl">
+  <Grid>
+    <TextBox Name="InputTextBox" Text="{Binding Text, Mode=TwoWay}" KeyUp="TextBox_KeyUp">
+      <FlyoutBase.AttachedFlyout>
+        <Flyout>
+          <ListBox ItemsSource="{Binding PreviousEntries}" SelectionChanged="OnSelectionChanged">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding}"/>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        </Flyout>
+    </FlyoutBase.AttachedFlyout>
+    </TextBox>
+    <Button Content="▼"
+            HorizontalAlignment="Right"
+            Margin="0"
+            BorderThickness="0"
+            Background="Transparent"
+            Click="ShowFlyout"/>
+  </Grid>
+</UserControl>

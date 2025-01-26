@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:res="clr-namespace:GrblExpress.Resources;assembly=GrblExpress"
+             xmlns:controls="clr-namespace:GrblExpress.Controls"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             x:Class="GrblExpress.Controls.SignalsControl"
+             x:DataType="controls:SignalsControl">
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+          <controls:SignalControl Text="X" ToolTipText="{x:Static res:Resources.XAxisLabel}"/>
+          <controls:SignalControl Text="Y" ToolTipText="{x:Static res:Resources.YAxisLabel}"/>
+          <controls:SignalControl Text="Z" ToolTipText="{x:Static res:Resources.ZAxisLabel}"/>
+          <controls:SignalControl Text="A" ToolTipText="{x:Static res:Resources.AAxisLabel}"/>
+          <controls:SignalControl Text="B" ToolTipText="{x:Static res:Resources.BAxisLabel}"/>
+          <controls:SignalControl Text="C" ToolTipText="{x:Static res:Resources.CAxisLabel}"/>
+          <controls:SignalControl Text="U" ToolTipText="{x:Static res:Resources.UAxisLabel}"/>
+          <controls:SignalControl Text="V" ToolTipText="{x:Static res:Resources.VAxisLabel}"/>
+          <controls:SignalControl Text="W" ToolTipText="{x:Static res:Resources.WAxisLabel}"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+          <controls:SignalControl Text="W"/>
+          <controls:SignalControl Text="F"/>
+          <controls:SignalControl Text="B"/>
+          <controls:SignalControl Text="O"/>
+          <controls:SignalControl Text="H"/>
+          <controls:SignalControl Text="S"/>
+          <controls:SignalControl Text="R"/>
+          <controls:SignalControl Text="E"/>
+          <controls:SignalControl Text="D"/>
+          <controls:SignalControl Text="P"/>
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,137 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:types="clr-namespace:GrblExpress.Common.Types;assembly=GrblExpress.Common"
+             x:DataType="local:HomingControl"
+             x:Class="GrblExpress.Controls.HomingControl">
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="Vertical">
+        <!-- X Axis -->
+        <Grid Name="XAxis" IsVisible="{Binding XVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="X:" VerticalAlignment="Center" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding XAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeX}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- Y Axis -->
+        <Grid IsVisible="{Binding YVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="Y:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding YAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeY}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- Z Axis -->
+        <Grid IsVisible="{Binding ZVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="Z:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding ZAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeZ}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- A Axis -->
+        <Grid IsVisible="{Binding AVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="A:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding AAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeA}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- B Axis -->
+        <Grid IsVisible="{Binding BVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="B:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding BAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeB}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- C Axis -->
+        <Grid IsVisible="{Binding CVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="C:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding CAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeC}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- U Axis -->
+        <Grid IsVisible="{Binding UVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="U:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding UAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeU}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- V Axis -->
+        <Grid IsVisible="{Binding VVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="V:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding VAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeV}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- W Axis -->
+        <Grid IsVisible="{Binding WVisible}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock VerticalAlignment="Center" Text="W:" Grid.Column="0"/>
+          <TextBlock VerticalAlignment="Center" Width="75" Grid.Column="1" Text="{Binding WAxisHomingStatus}"/>
+          <Button VerticalAlignment="Center" Margin="5,5,0,0" Width="32" Height="33.33" Padding="8,-2,8,4" Grid.Column="2" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeW}">
+            <TextBlock Text="⌂" Margin="0" Padding="0" FontSize="22"/>
+          </Button>
+        </Grid>
+        <!-- Home All Button -->
+        <Button Content="Home All" HorizontalAlignment="Center" Margin="0,5,0,0" Command="{Binding HomeAxisCommand}" CommandParameter="{x:Static types:GenericCommand.HomeAll}"/>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>
+

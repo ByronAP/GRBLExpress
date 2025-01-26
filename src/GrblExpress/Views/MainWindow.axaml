@@ -1,0 +1,101 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GrblExpress.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="using:FluentAvalonia.UI.Controls"
+        xmlns:controls="using:GrblExpress.Controls"
+        x:Class="GrblExpress.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Grbl Express">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <!-- Main Menu -->
+      <RowDefinition Height="Auto"/>
+      <!-- Toolbar -->
+      <RowDefinition Height="*"/>
+      <!-- Content Area -->
+      <RowDefinition Height="Auto"/>
+      <!-- Status Bar -->
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <!-- Navigation -->
+      <ColumnDefinition Width="*"/>
+      <!-- Main Content -->
+    </Grid.ColumnDefinitions>
+
+    <!-- Main Menu -->
+    <Menu Grid.Row="0" Grid.ColumnSpan="2">
+      <MenuItem Header="_File">
+        <MenuItem Header="_New" Command="{Binding NewCommand}"/>
+        <MenuItem Header="_Open" Command="{Binding OpenCommand}"/>
+        <Separator/>
+        <MenuItem Header="_Connect" Command="{Binding ConnectCommand}"/>
+        <MenuItem Header="_Disconnect" Command="{Binding DisconnectCommand}"/>
+        <Separator/>
+        <MenuItem Header="_Exit" Command="{Binding ExitCommand}"/>
+      </MenuItem>
+      <MenuItem Header="_Edit">
+        <MenuItem Header="_Undo" Command="{Binding UndoCommand}"/>
+        <MenuItem Header="_Redo" Command="{Binding RedoCommand}"/>
+      </MenuItem>
+      <MenuItem Header="_Help">
+        <MenuItem Header="_About" Command="{Binding AboutCommand}"/>
+      </MenuItem>
+    </Menu>
+
+    <!-- Toolbar -->
+    <Border Grid.Row="1" Grid.ColumnSpan="2" Padding="5">
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="5">
+        <Button Content="New" Command="{Binding NewCommand}" Width="75"/>
+        <Button Content="Open" Command="{Binding OpenCommand}" Width="75"/>
+        <Button Content="Save" Command="{Binding SaveCommand}" Width="75"/>
+      </StackPanel>
+    </Border>
+
+    <!-- Navigation Pane -->
+    <SplitView Grid.Row="2" Grid.Column="0" PanePlacement="Left" DisplayMode="CompactInline" IsPaneOpen="{Binding IsSplitViewPaneOpen}">
+      <SplitView.Pane>
+        <StackPanel VerticalAlignment="Top" Margin="5" Orientation="Horizontal">
+          <Button Command="{Binding ChangeSplitViewPaneStatusCommand}" Content="☰"/>
+          <TextBlock VerticalAlignment="Center" Margin="15, 0, 0, 0" FontSize="16" Text="Navigation"/>
+        </StackPanel>
+      </SplitView.Pane>
+      <!-- Main Content Area -->
+      <ContentControl Grid.Row="2" Grid.Column="1">
+        <StackPanel Orientation="Vertical">
+          <StackPanel Orientation="Horizontal">
+            <controls:DroControl ZeroCommandRequested="DroControl_ZeroCommandRequested" HorizontalAlignment="Left"/>
+            <controls:LimitsControl HorizontalAlignment="Left"/>
+            <controls:SignalsControl HorizontalAlignment="Left"/>
+            <controls:CoolantControl HorizontalAlignment="Left"/>
+            <controls:FontPickerControl HorizontalAlignment="Left"/>
+            <controls:SpindleControl HorizontalAlignment="Left"/>
+            <controls:HomingControl AxisHomingRequested="HomingControl_AxisHomingRequested" HorizontalAlignment="Left"/>
+            <controls:JoggingControl JogRequested="JoggingControl_JogRequested" HorizontalAlignment="Left"/>
+            <controls:CycleActionsControl CycleCommandRequested="CycleActionsControl_CycleCommandRequested" HorizontalAlignment="Left"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Height="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <controls:ProgramBlocksControl VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <controls:MdiControl MdiCommandRequested="MdiControl_MdiCommandRequested" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <controls:ConsoleControl Width="700" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <controls:SDCardControl Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+          </StackPanel>
+        </StackPanel>
+      </ContentControl>
+    </SplitView>
+
+    <!-- Status Bar -->
+    <Border Grid.Row="3" Grid.ColumnSpan="2" Padding="5">
+      <TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center"/>
+    </Border>
+  </Grid>
+</Window>

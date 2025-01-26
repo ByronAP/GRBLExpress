@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             x:DataType="local:MdiControl"
+             x:Class="GrblExpress.Controls.MdiControl">
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="Horizontal">
+        <local:PulldownTextBoxControl Name="CommandTextBox" MinWidth="150" PreviousEntries="{Binding PreviousCommands}" ReturnPressedRequested="PulldownTextBoxControl_ReturnPressedRequested"/>
+        <Button Content="Send" Click="Send_Button_Click" Margin="5,0,0,0"/>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:GrblExpress.Controls;assembly=GrblExpress"
+             x:Class="GrblExpress.Controls.ProgramBlocksControl"
+             x:DataType="local:ProgramBlocksControl">
+    <DataGrid
+      Name="ProgramBlocksDataGrid"
+      SelectionMode="Single"
+      ItemsSource="{Binding ProgramBlocks.Blocks}"
+      IsReadOnly="{Binding ReadOnly}"
+      AutoGenerateColumns="False">
+      <DataGrid.ContextFlyout>
+        <MenuFlyout>
+          <MenuItem Header="Insert Above" Command="{Binding ContextMenuCommand}" CommandParameter="IA"/>
+          <MenuItem Header="Insert Below" Command="{Binding ContextMenuCommand}" CommandParameter="IB"/>
+          <MenuItem Header="Delete" Command="{Binding ContextMenuCommand}" CommandParameter="D"/>
+          <MenuItem Header="Clear" Command="{Binding ContextMenuCommand}" CommandParameter="C"/>
+        </MenuFlyout>
+      </DataGrid.ContextFlyout>
+      <DataGrid.Columns>
+        <!-- Read-only line number column -->
+        <DataGridTextColumn Header="Line" IsReadOnly="True" Binding="{Binding Index}"/>
+        <!-- Editable block data column -->
+        <DataGridTextColumn Header="Block" Binding="{Binding Data}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+</UserControl>

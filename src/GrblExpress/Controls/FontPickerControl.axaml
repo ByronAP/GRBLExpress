@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:GrblExpress.Controls"
+             x:DataType="controls:FontPickerControl"
+             x:Class="GrblExpress.Controls.FontPickerControl">
+  <ComboBox Width="150" ItemsSource="{Binding AvailableFonts}" SelectedItem="{Binding SelectedFont}" >
+        <ComboBox.ItemTemplate>
+            <DataTemplate x:DataType="FontFamily">
+                <TextBlock 
+                    Text="{Binding Name}"
+                    FontFamily="{Binding .}"
+                    TextTrimming="CharacterEllipsis" 
+                    />
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
+    </ComboBox>
+</UserControl>

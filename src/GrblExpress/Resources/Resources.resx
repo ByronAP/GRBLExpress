@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GrblAlarmCode1Title" xml:space="preserve">
+    <value>Hard Limit</value>
+  </data>
+  <data name="GrblAlarmCode1Msg" xml:space="preserve">
+    <value>Hard limit has been triggered. Machine position is likely lost due to sudden halt. Re-homing is highly recommended.</value>
+  </data>
+  <data name="GrblAlarmCode2Title" xml:space="preserve">
+    <value>Soft Limit</value>
+  </data>
+  <data name="GrblAlarmCode2Msg" xml:space="preserve">
+    <value>Soft limit alarm. G-code motion target exceeds machine travel. Machine position retained. Alarm may be safely unlocked.</value>
+  </data>
+  <data name="GrblAlarmCode3Title" xml:space="preserve">
+    <value>Abort during cycle</value>
+  </data>
+  <data name="GrblAlarmCode3Msg" xml:space="preserve">
+    <value>This error indicates that the machine controller was reset while in motion. Machine position was likely lost due to sudden halt so you will need to reinitialize the machine to continue working.</value>
+  </data>
+  <data name="GrblAlarmCode4Title" xml:space="preserve">
+    <value>Probe fail</value>
+  </data>
+  <data name="GrblAlarmCode4Msg" xml:space="preserve">
+    <value>The probe is not in the expected initial state before starting a probing cycle. This can occur in the following cases:
+
+If the bit is touching the BitSetter before beginning a tool measurement.
+If the tool is touching the BitZero when beginning a probe cycle.</value>
+  </data>
+  <data name="GrblAlarmCode5Title" xml:space="preserve">
+    <value>Probe fail</value>
+  </data>
+  <data name="GrblAlarmCode5Msg" xml:space="preserve">
+    <value>The probe did not contact the workpiece within the programmed travel. This can happen in a few cases:
+
+During a tool measurement with BitSetter, the tool is too short to reach the BitSetter.
+The BitSetter is faulty or not connected during a tool measurement.
+During a probing cycle with the BitZero, the tool begins too far away from the BitZero, and it is unable to touch it within the preprogrammed travel distance.
+During a probing cycle, the BitZero is faulty, or not plugged in, so the machine never detects contact with the tool</value>
+  </data>
+  <data name="GrblAlarmCode6Title" xml:space="preserve">
+    <value>Homing fail</value>
+  </data>
+  <data name="GrblAlarmCode6Msg" xml:space="preserve">
+    <value>This indicates that the machine was reset while a homing cycle was running. The machine position will be lost, but you can re-initialize the machine to clear this error.</value>
+  </data>
+  <data name="GrblAlarmCode7Title" xml:space="preserve">
+    <value>Homing fail</value>
+  </data>
+  <data name="GrblAlarmCode7Msg" xml:space="preserve">
+    <value>Safety door was opened during homing cycle.</value>
+  </data>
+  <data name="GrblAlarmCode8Title" xml:space="preserve">
+    <value>Homing fail</value>
+  </data>
+  <data name="GrblAlarmCode8Msg" xml:space="preserve">
+    <value>Pull off travel failed to clear limit switch.</value>
+  </data>
+  <data name="GrblAlarmCode9Title" xml:space="preserve">
+    <value>Homing fail</value>
+  </data>
+  <data name="GrblAlarmCode9Msg" xml:space="preserve">
+    <value>Could not find limit switch within search distances. This indicates that one or more of the limit switches may be disconnected or malfunctioning.</value>
+  </data>
+  <data name="GrblAlarmCode10Title" xml:space="preserve">
+    <value>Homing fail</value>
+  </data>
+  <data name="GrblAlarmCode10Msg" xml:space="preserve">
+    <value>Second dual axis limit switch failed to trigger within configured search distance after first. This can only occur on a Shapeoko 5 Pro in a few circumstances:
+
+The machine is way out of square the first time homing is attempted. If this is the case, run the initialization routine again to see if the problem goes away. If it does, the machine should now be within tolerance to home successfully in the future.
+The Y2 limit switch is not connected or malfunctioning.</value>
+  </data>
+  <data name="XAxisLabel" xml:space="preserve">
+    <value>X Axis</value>
+  </data>
+  <data name="YAxisLabel" xml:space="preserve">
+    <value>Y Axis</value>
+  </data>
+  <data name="ZAxisLabel" xml:space="preserve">
+    <value>Z Axis</value>
+  </data>
+  <data name="AAxisLabel" xml:space="preserve">
+    <value>A Axis</value>
+  </data>
+  <data name="BAxisLabel" xml:space="preserve">
+    <value>B Axis</value>
+  </data>
+  <data name="CAxisLabel" xml:space="preserve">
+    <value>C Axis</value>
+  </data>
+  <data name="UAxisLabel" xml:space="preserve">
+    <value>U Axis</value>
+  </data>
+  <data name="VAxisLabel" xml:space="preserve">
+    <value>V Axis</value>
+  </data>
+  <data name="WAxisLabel" xml:space="preserve">
+    <value>W Axis</value>
+  </data>
+  <data name="MinimunShort" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="MaximumShort" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="DRO" xml:space="preserve">
+    <value>DRO</value>
+  </data>
+  <data name="Limits" xml:space="preserve">
+    <value>Limits</value>
+  </data>
+  <data name="ProgramLimits" xml:space="preserve">
+    <value>Program Limits</value>
+  </data>
+  <data name="MachineLimits" xml:space="preserve">
+    <value>Machine Limits</value>
+  </data>
+</root>

@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:types="clr-namespace:GrblExpress.Common.Types;assembly=GrblExpress.Common"
+             x:DataType="local:CycleActionsControl"
+             x:Class="GrblExpress.Controls.CycleActionsControl">
+
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock IsVisible="{Binding TitleVisible}" Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="{Binding Orientation}">
+        <Button Content="Cycle Start" Width="90" Margin="5" Grid.Column="2" Command="{Binding CycleCommand}" CommandParameter="{x:Static types:GenericCommand.CycleStart}"/>
+        <Button Content="Stop" Width="90" Margin="5" Grid.Column="2" Command="{Binding CycleCommand}" CommandParameter="{x:Static types:GenericCommand.CycleStop}"/>
+        <Button Content="Feed Hold" Width="90" Margin="5" Grid.Column="2" Command="{Binding CycleCommand}" CommandParameter="{x:Static types:GenericCommand.FeedHold}"/>
+        <Button Content="Rewind" Width="90" Margin="5" Grid.Column="2" Command="{Binding CycleCommand}" CommandParameter="{x:Static types:GenericCommand.FeedRewind}"/>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

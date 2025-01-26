@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             xmlns:converters="clr-namespace:GrblExpress.Converters"
+             xmlns:types="clr-namespace:GrblExpress.Common.Types;assembly=GrblExpress.Common"
+             x:DataType="local:JoggingControl"
+             x:Class="GrblExpress.Controls.JoggingControl">
+  <UserControl.Resources>
+    <converters:DoubleEqualsConverter x:Key="DoubleEqualsConverter"/>
+    <converters:IntEqualsConverter x:Key="IntEqualsConverter"/>
+  </UserControl.Resources>
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+            BorderBrush="{DynamicResource SystemFillColorAttentionBrush}"
+            BorderThickness="1"
+            Margin="1"
+            Padding="5">
+      <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto,Auto,Auto">
+        <Button Content="⚙" Grid.Row="0" Grid.Column="0" Margin="5">
+          <Button.Flyout>
+            <Flyout>
+              <StackPanel Orientation="Vertical">
+                <TextBlock Text="Jogging Settings" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+                <Border CornerRadius="{DynamicResource ControlCornerRadius}"
+                        BorderBrush="{DynamicResource SystemFillColorAttentionBrush}"
+                        BorderThickness="1"
+                        Margin="1"
+                        Padding="5">
+                  <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Distance:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <RadioButton Grid.Row="0" Grid.Column="1" Content="0.01" GroupName="Distance" IsChecked="{Binding JogDistance, Mode=TwoWay, Converter={StaticResource DoubleEqualsConverter}, ConverterParameter=0.01}"/>
+                    <RadioButton Grid.Row="0" Grid.Column="2" Content="0.1" GroupName="Distance" IsChecked="{Binding JogDistance, Mode=TwoWay, Converter={StaticResource DoubleEqualsConverter}, ConverterParameter=0.1}"/>
+                    <RadioButton Grid.Row="0" Grid.Column="3" Content="1" GroupName="Distance" IsChecked="{Binding JogDistance, Mode=TwoWay, Converter={StaticResource DoubleEqualsConverter}, ConverterParameter=1}"/>
+                    <RadioButton Grid.Row="0" Grid.Column="4" Content="10" GroupName="Distance" IsChecked="{Binding JogDistance, Mode=TwoWay, Converter={StaticResource DoubleEqualsConverter}, ConverterParameter=10}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Feedrate:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <RadioButton Grid.Row="1" Grid.Column="1" Content="5" GroupName="Feedrate" IsChecked="{Binding JogFeedrate, Mode=TwoWay, Converter={StaticResource IntEqualsConverter}, ConverterParameter=5}"/>
+                    <RadioButton Grid.Row="1" Grid.Column="2" Content="100" GroupName="Feedrate" IsChecked="{Binding JogFeedrate, Mode=TwoWay, Converter={StaticResource IntEqualsConverter}, ConverterParameter=100}"/>
+                    <RadioButton Grid.Row="1" Grid.Column="3" Content="500" GroupName="Feedrate" IsChecked="{Binding JogFeedrate, Mode=TwoWay, Converter={StaticResource IntEqualsConverter}, ConverterParameter=500}"/>
+                    <RadioButton Grid.Row="1" Grid.Column="4" Content="1000" GroupName="Feedrate" IsChecked="{Binding JogFeedrate, Mode=TwoWay, Converter={StaticResource IntEqualsConverter}, ConverterParameter=1000}"/>
+                  </Grid>
+                </Border>
+              </StackPanel>
+            </Flyout>
+          </Button.Flyout>
+        </Button>
+        <RepeatButton FontSize="34" Content="▲" Grid.Row="0" Grid.Column="1" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogUp}"/>
+        <RepeatButton FontSize="34" Content="◀" Grid.Row="1" Grid.Column="0" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogLeft}"/>
+        <RepeatButton FontSize="34" Content="■" Grid.Row="1" Grid.Column="1" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogStop}"/>
+        <RepeatButton FontSize="34" Content="▶" Grid.Row="1" Grid.Column="2" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogRight}"/>
+        <RepeatButton FontSize="34" Content="▼" Grid.Row="2" Grid.Column="1" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogDown}"/>
+
+        <RepeatButton FontSize="34" Content="▲" Grid.Row="0" Grid.Column="3" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogAltUp}"/>
+        <RepeatButton FontSize="34" Content="▼" Grid.Row="2" Grid.Column="3" Margin="5" Command="{Binding JogCommand}" CommandParameter="{x:Static types:GenericCommand.JogAltDown}"/>
+      </Grid>
+    </Border>
+  </StackPanel>
+</UserControl>

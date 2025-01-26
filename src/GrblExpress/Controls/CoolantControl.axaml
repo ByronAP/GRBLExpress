@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls"
+             x:DataType="local:CoolantControl"
+             x:Class="GrblExpress.Controls.CoolantControl">
+  <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
+      <StackPanel Orientation="Vertical">
+        <ToggleSwitch Margin="0,5,0,0" ToolTip.Tip="Turn flood cooling on nor off" OnContent="On" OffContent="Off" Content="Flood" IsChecked="{Binding Flood, Mode=TwoWay}" IsVisible="{Binding FloodVisible}"/>
+        <ToggleSwitch Margin="0,5,0,0" ToolTip.Tip="Turn mist cooling on or off" OnContent="On" OffContent="Off" Content="Mist" IsChecked="{Binding Mist, Mode=TwoWay}" IsVisible="{Binding MistVisible}"/>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>
