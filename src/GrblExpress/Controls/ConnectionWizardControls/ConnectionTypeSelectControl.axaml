@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls.ConnectionWizardControls"
+             xmlns:res="clr-namespace:GrblExpress.Resources;assembly=GrblExpress"
+             x:DataType="local:ConnectionTypeSelectControl"
+             x:Class="GrblExpress.Controls.ConnectionWizardControls.ConnectionTypeSelectControl">
+  <StackPanel>
+            <TextBlock Margin="0,2,0,0" Text="Serial" FontWeight="SemiBold"/>
+            <TextBlock Margin="0,0,0,5" TextWrapping="Wrap" Text="{x:Static res:Resources.SerialConnectionDescription}"/>
+            <TextBlock Margin="0,2,0,0" Text="Telnet" FontWeight="SemiBold"/>
+            <TextBlock Margin="0,0,0,5" TextWrapping="Wrap" Text="{x:Static res:Resources.TelnetConnectionDescription}"/>
+            <TextBlock Margin="0,2,0,0" Text="Websocket" FontWeight="SemiBold"/>
+            <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" Text="{x:Static res:Resources.WebsocketConnectionDescription}"/>
+            <StackPanel Orientation="Horizontal">
+              <TextBlock VerticalAlignment="Center" Text="Select the connection type you would like to use:"/>
+              <ComboBox VerticalAlignment="Center" Margin="5,0,0,0" ItemsSource="{Binding AvailableConnectionTypes}" SelectedItem="{Binding SelectedConnectionType}" PlaceholderText="Connection Type" MinWidth="150"/>
+            </StackPanel>
+          </StackPanel>
+</UserControl>
