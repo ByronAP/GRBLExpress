@@ -8,6 +8,8 @@
         x:Class="GrblExpress.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        MinWidth="2200"
+        MinHeight="1000"
         Title="Grbl Express">
 
   <Design.DataContext>
@@ -83,11 +85,12 @@
             <controls:JoggingControl JogRequested="JoggingControl_JogRequested" HorizontalAlignment="Left"/>
             <controls:CycleActionsControl CycleCommandRequested="CycleActionsControl_CycleCommandRequested" HorizontalAlignment="Left"/>
           </StackPanel>
-          <StackPanel Orientation="Horizontal" Height="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+          <StackPanel Orientation="Horizontal" Height="400" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <controls:ProgramBlocksControl VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <controls:MdiControl MdiCommandRequested="MdiControl_MdiCommandRequested" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <controls:ConsoleControl Width="700" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <controls:ConsoleControl Width="400" Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <controls:SDCardControl Height="300" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <controls:ConnectionWizardControl Width="700" HorizontalAlignment="Left"/>
           </StackPanel>
         </StackPanel>
       </ContentControl>
