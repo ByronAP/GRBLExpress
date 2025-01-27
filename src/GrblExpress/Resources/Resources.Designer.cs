@@ -333,6 +333,24 @@ namespace GrblExpress.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This is the most common connection method, utilizing a physical USB cable to directly link your computer to the GRBL controller. This provides a stable and reliable connection for most users..
+        /// </summary>
+        public static string SerialConnectionDescription {
+            get {
+                return ResourceManager.GetString("SerialConnectionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telnet is an outdated protocol that uses a network connection. This allows you to control your CNC machine over a network (e.g., Ethernet or Wi-Fi), enabling remote operation or convenient access from different devices on the same network. It is generally slow and not commonly used..
+        /// </summary>
+        public static string TelnetConnectionDescription {
+            get {
+                return ResourceManager.GetString("TelnetConnectionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to U Axis.
         /// </summary>
         public static string UAxisLabel {
@@ -356,6 +374,15 @@ namespace GrblExpress.Resources {
         public static string WAxisLabel {
             get {
                 return ResourceManager.GetString("WAxisLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Websocket provides a modern, efficient, and bi-directional communication channel over a network. It offers faster data transfer and real-time updates compared to traditional methods like Telnet. This is a suitable choice if your GRBL controller supports Websocket communication and you prioritize performance and responsiveness..
+        /// </summary>
+        public static string WebsocketConnectionDescription {
+            get {
+                return ResourceManager.GetString("WebsocketConnectionDescription", resourceCulture);
             }
         }
         
