@@ -24,9 +24,9 @@ public partial class ConnectionTypeSelectControl : UserControl
         if (!SelectedConnectionType.HasValue)
         {
             // TODO : Localize the error message
-            return (false, "Please select a connection type");
+            return (true, "Please select a connection type");
         }
-        return (true, "");
+        return (false, "");
     }
 
     public ConnectionTypeSelectControl()
