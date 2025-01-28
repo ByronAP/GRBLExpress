@@ -378,7 +378,7 @@ namespace GrblExpress.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Websocket provides a modern, efficient, and bi-directional communication channel over a network. It offers faster data transfer and real-time updates compared to traditional methods like Telnet. This is a suitable choice if your GRBL controller supports Websocket communication and you prioritize performance and responsiveness..
+        ///   Looks up a localized string similar to Websocket provides a modern, efficient, and bi-directional communication channel over a network. It offers faster data transfer and real-time updates. This is a suitable choice if your GRBL controller supports Websocket communication and you prioritize performance and responsiveness..
         /// </summary>
         public static string WebsocketConnectionDescription {
             get {

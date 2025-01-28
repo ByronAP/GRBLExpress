@@ -240,6 +240,6 @@ The Y2 limit switch is not connected or malfunctioning.</value>
     <value>Telnet is an outdated protocol that uses a network connection. This allows you to control your CNC machine over a network (e.g., Ethernet or Wi-Fi), enabling remote operation or convenient access from different devices on the same network. It is generally slow and not commonly used.</value>
   </data>
   <data name="WebsocketConnectionDescription" xml:space="preserve">
-    <value>Websocket provides a modern, efficient, and bi-directional communication channel over a network. It offers faster data transfer and real-time updates compared to traditional methods like Telnet. This is a suitable choice if your GRBL controller supports Websocket communication and you prioritize performance and responsiveness.</value>
+    <value>Websocket provides a modern, efficient, and bi-directional communication channel over a network. It offers faster data transfer and real-time updates. This is a suitable choice if your GRBL controller supports Websocket communication and you prioritize performance and responsiveness.</value>
   </data>
 </root>
