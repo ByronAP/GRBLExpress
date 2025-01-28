@@ -14,9 +14,9 @@ public partial class SpindleControl : UserControl
 {
     public static readonly StyledProperty<string> TitleProperty = AvaloniaProperty.Register<SpindleControl, string>(nameof(Title), defaultValue: "Spindle");
 
-    public static readonly StyledProperty<bool> DirectionEnabledProperty = AvaloniaProperty.Register<SpindleControl, bool>(nameof(DirectionEnabled), defaultValue: true);
-    public static readonly StyledProperty<bool> SpeedEnabledProperty = AvaloniaProperty.Register<SpindleControl, bool>(nameof(SpeedEnabled), defaultValue: true);
-    public static readonly StyledProperty<bool> SpeedOverrideEnabledProperty = AvaloniaProperty.Register<SpindleControl, bool>(nameof(SpeedOverrideEnabled), defaultValue: true);
+    public static readonly StyledProperty<bool> IsDirectionEnabledProperty = AvaloniaProperty.Register<SpindleControl, bool>(nameof(IsDirectionEnabled), defaultValue: true);
+    public static readonly StyledProperty<bool> IsSpeedEnabledProperty = AvaloniaProperty.Register<SpindleControl, bool>(nameof(IsSpeedEnabled), defaultValue: true);
+    public static readonly StyledProperty<bool> IsSpeedOverrideEnabledProperty = AvaloniaProperty.Register<SpindleControl, bool>(nameof(IsSpeedOverrideEnabled), defaultValue: true);
 
     public static readonly StyledProperty<int> SpeedProperty = AvaloniaProperty.Register<SpindleControl, int>(nameof(Speed), defaultValue: 0);
     public static readonly StyledProperty<int> MinSpeedProperty = AvaloniaProperty.Register<SpindleControl, int>(nameof(MinSpeed), defaultValue: 0);
@@ -30,22 +30,22 @@ public partial class SpindleControl : UserControl
         set => SetValue(TitleProperty, value);
     }
 
-    public bool DirectionEnabled
+    public bool IsDirectionEnabled
     {
-        get => GetValue(DirectionEnabledProperty);
-        set => SetValue(DirectionEnabledProperty, value);
+        get => GetValue(IsDirectionEnabledProperty);
+        set => SetValue(IsDirectionEnabledProperty, value);
     }
 
-    public bool SpeedEnabled
+    public bool IsSpeedEnabled
     {
-        get => GetValue(SpeedEnabledProperty);
-        set => SetValue(SpeedEnabledProperty, value);
+        get => GetValue(IsSpeedEnabledProperty);
+        set => SetValue(IsSpeedEnabledProperty, value);
     }
 
-    public bool SpeedOverrideEnabled
+    public bool IsSpeedOverrideEnabled
     {
-        get => GetValue(SpeedOverrideEnabledProperty);
-        set => SetValue(SpeedOverrideEnabledProperty, value);
+        get => GetValue(IsSpeedOverrideEnabledProperty);
+        set => SetValue(IsSpeedOverrideEnabledProperty, value);
     }
 
     public int Speed

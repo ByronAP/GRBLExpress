@@ -27,28 +27,28 @@
         <TextBlock Text="Direction:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="5">
           <RadioButton Content="Off" GroupName="Direction"
-                       IsEnabled="{Binding DirectionEnabled}"
+                       IsEnabled="{Binding IsDirectionEnabled}"
                        IsChecked="{Binding SpindleDirection,
                                            Mode=TwoWay,
                                            Converter={StaticResource EnumBooleanConverter},
                                            ConverterParameter=Off}" />
           <RadioButton Content="CW" GroupName="Direction"
-                       IsEnabled="{Binding DirectionEnabled}"
+                       IsEnabled="{Binding IsDirectionEnabled}"
                        IsChecked="{Binding SpindleDirection,
                                            Mode=TwoWay,
                                            Converter={StaticResource EnumBooleanConverter},
                                            ConverterParameter=CW}" />
           <RadioButton Content="CCW" GroupName="Direction"
-                       IsEnabled="{Binding DirectionEnabled}"
+                       IsEnabled="{Binding IsDirectionEnabled}"
                        IsChecked="{Binding SpindleDirection,
                                            Mode=TwoWay,
                                            Converter={StaticResource EnumBooleanConverter},
                                            ConverterParameter=CCW}" />
         </StackPanel>
         <TextBlock Text="Speed:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-        <ui:NumberBox IsEnabled="{Binding SpeedEnabled}" MinWidth="180" SmallChange="1" LargeChange="10" Minimum="{Binding MinSpeed}" Maximum="{Binding MaxSpeed}" SpinButtonPlacementMode="Inline" Grid.Row="1" Grid.Column="1" Value="{Binding Speed, Mode=TwoWay}"/>
-        <Button IsEnabled="{Binding SpeedEnabled}" Content="0" Grid.Row="1" Grid.Column="2" Click="Zero_Speed_Button_Click"/>
-        <Slider IsEnabled="{Binding SpeedEnabled}" Value="{Binding Speed}" SmallChange="1" LargeChange="10" Minimum="{Binding MinSpeed}" Maximum="{Binding MaxSpeed}" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,-10,0,0"/>
+        <ui:NumberBox IsEnabled="{Binding IsSpeedEnabled}" MinWidth="180" SmallChange="1" LargeChange="10" Minimum="{Binding MinSpeed}" Maximum="{Binding MaxSpeed}" SpinButtonPlacementMode="Inline" Grid.Row="1" Grid.Column="1" Value="{Binding Speed, Mode=TwoWay}"/>
+        <Button IsEnabled="{Binding IsSpeedEnabled}" Content="0" Grid.Row="1" Grid.Column="2" Click="Zero_Speed_Button_Click"/>
+        <Slider IsEnabled="{Binding IsSpeedEnabled}" Value="{Binding Speed}" SmallChange="1" LargeChange="10" Minimum="{Binding MinSpeed}" Maximum="{Binding MaxSpeed}" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,-10,0,0"/>
         <TextBlock Foreground="{StaticResource SystemFillColorAttentionBrush}" Width="230" FontFamily="Raven MXI" HorizontalAlignment="Center" FontSize="58" Text="{Binding Speed, StringFormat='{}{0} RPM'}"  TextAlignment="Right" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,-30,0,10"/>
         <Grid Grid.Row="4" Grid.ColumnSpan="2">
           <Grid.ColumnDefinitions>
@@ -62,21 +62,21 @@
             <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
           <TextBlock Name="OverrideLabel" Text="Override:" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-          <ui:NumberBox Name="OverrideNumberBox" VerticalAlignment="Center" IsEnabled="{Binding SpeedOverrideEnabled}" MinWidth="145" SmallChange="1" LargeChange="10" Minimum="10" Maximum="200" SpinButtonPlacementMode="Inline" Grid.Row="1" Grid.Column="1" Value="{Binding OverridePercentage, Mode=TwoWay}"/>
+          <ui:NumberBox Name="OverrideNumberBox" VerticalAlignment="Center" IsEnabled="{Binding IsSpeedOverrideEnabled}" MinWidth="145" SmallChange="1" LargeChange="10" Minimum="10" Maximum="200" SpinButtonPlacementMode="Inline" Grid.Row="1" Grid.Column="1" Value="{Binding OverridePercentage, Mode=TwoWay}"/>
           <StackPanel Orientation="Vertical" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" Margin="5">
-            <RepeatButton IsEnabled="{Binding SpeedOverrideEnabled}"
+            <RepeatButton IsEnabled="{Binding IsSpeedOverrideEnabled}"
                           Command="{Binding IncreaseOverrideCommand}"
                           Margin="0,0,0,5"
                           FontFamily="{StaticResource SymbolThemeFontFamily}"
                           FontSize="18" Content="&#xe70e;" HorizontalAlignment="Right"/>
-            <RepeatButton IsEnabled="{Binding SpeedOverrideEnabled}"
+            <RepeatButton IsEnabled="{Binding IsSpeedOverrideEnabled}"
                           Command="{Binding DecreaseOverrideCommand}"
                           Margin="0,5,0,0"
                           FontFamily="{StaticResource SymbolThemeFontFamily}"
                           FontSize="18" Content="&#xe70d;" HorizontalAlignment="Right" />
           </StackPanel>          
         </Grid>
-        <Button IsEnabled="{Binding SpeedOverrideEnabled}" Content="0" Grid.Row="4" Grid.Column="2" Click="Zero_Override_Button_Click"/>
+        <Button IsEnabled="{Binding IsSpeedOverrideEnabled}" Content="0" Grid.Row="4" Grid.Column="2" Click="Zero_Override_Button_Click"/>
       </Grid>
     </Border>
   </StackPanel>
