@@ -12,8 +12,8 @@ public partial class CoolantControl : UserControl
     public static readonly StyledProperty<bool> MistProperty = AvaloniaProperty.Register<CoolantControl, bool>(nameof(Mist), defaultValue: false);
 
     // Visibility
-    public static readonly StyledProperty<bool> FloodVisibleProperty = AvaloniaProperty.Register<CoolantControl, bool>(nameof(FloodVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> MistVisibleProperty = AvaloniaProperty.Register<CoolantControl, bool>(nameof(MistVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsFloodVisibleProperty = AvaloniaProperty.Register<CoolantControl, bool>(nameof(IsFloodVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsMistVisibleProperty = AvaloniaProperty.Register<CoolantControl, bool>(nameof(IsMistVisible), defaultValue: true);
 
     public string Title
     {
@@ -33,16 +33,16 @@ public partial class CoolantControl : UserControl
         set => SetValue(MistProperty, value);
     }
 
-    public bool FloodVisible
+    public bool IsFloodVisible
     {
-        get => GetValue(FloodVisibleProperty);
-        set => SetValue(FloodVisibleProperty, value);
+        get => GetValue(IsFloodVisibleProperty);
+        set => SetValue(IsFloodVisibleProperty, value);
     }
 
-    public bool MistVisible
+    public bool IsMistVisible
     {
-        get => GetValue(MistVisibleProperty);
-        set => SetValue(MistVisibleProperty, value);
+        get => GetValue(IsMistVisibleProperty);
+        set => SetValue(IsMistVisibleProperty, value);
     }
 
     public CoolantControl()
