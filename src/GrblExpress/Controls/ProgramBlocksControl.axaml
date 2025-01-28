@@ -9,7 +9,7 @@
       Name="ProgramBlocksDataGrid"
       SelectionMode="Single"
       ItemsSource="{Binding ProgramBlocks.Blocks}"
-      IsReadOnly="{Binding ReadOnly}"
+      IsReadOnly="{Binding IsReadOnly}"
       AutoGenerateColumns="False">
       <DataGrid.ContextFlyout>
         <MenuFlyout>

@@ -9,7 +9,7 @@ namespace GrblExpress.Controls;
 public partial class ProgramBlocksControl : UserControl
 {
     public static readonly StyledProperty<ProgramBlocks> ProgramBlocksProperty = AvaloniaProperty.Register<ProgramBlocksControl, ProgramBlocks>(nameof(ProgramBlocks));
-    public static readonly StyledProperty<bool> ReadOnlyProperty = AvaloniaProperty.Register<ProgramBlocksControl, bool>(nameof(ReadOnly), false);
+    public static readonly StyledProperty<bool> IsReadOnlyProperty = AvaloniaProperty.Register<ProgramBlocksControl, bool>(nameof(IsReadOnly), false);
 
     public ProgramBlocks ProgramBlocks
     {
@@ -20,12 +20,12 @@ public partial class ProgramBlocksControl : UserControl
         }
     }
 
-    public bool ReadOnly
+    public bool IsReadOnly
     {
-        get => GetValue(ReadOnlyProperty);
+        get => GetValue(IsReadOnlyProperty);
         set
         {
-            SetValue(ReadOnlyProperty, value);
+            SetValue(IsReadOnlyProperty, value);
         }
     }
 
