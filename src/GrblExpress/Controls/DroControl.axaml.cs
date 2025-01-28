@@ -26,15 +26,15 @@ public partial class DroControl : UserControl
     public static readonly StyledProperty<double> WProperty = AvaloniaProperty.Register<DroControl, double>(nameof(W), defaultValue: 0);
 
     // Axis Visibility
-    public static readonly StyledProperty<bool> XVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(XVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> YVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(YVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> ZVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(ZVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> AVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(AVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> BVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(BVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> CVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(CVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> UVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(UVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> VVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(VVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> WVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(WVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsXVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsXVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsYVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsYVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsZVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsZVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsAVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsAVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsBVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsBVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsCVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsCVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsUVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsUVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsVVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsVVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsWVisibleProperty = AvaloniaProperty.Register<DroControl, bool>(nameof(IsWVisible), defaultValue: true);
 
     public string Title
     {
@@ -96,58 +96,58 @@ public partial class DroControl : UserControl
         set => SetValue(WProperty, value);
     }
 
-    public bool XVisible
+    public bool IsXVisible
     {
-        get => GetValue(XVisibleProperty);
-        set => SetValue(XVisibleProperty, value);
+        get => GetValue(IsXVisibleProperty);
+        set => SetValue(IsXVisibleProperty, value);
     }
 
-    public bool YVisible
+    public bool IsYVisible
     {
-        get => GetValue(YVisibleProperty);
-        set => SetValue(YVisibleProperty, value);
+        get => GetValue(IsYVisibleProperty);
+        set => SetValue(IsYVisibleProperty, value);
     }
 
-    public bool ZVisible
+    public bool IsZVisible
     {
-        get => GetValue(ZVisibleProperty);
-        set => SetValue(ZVisibleProperty, value);
+        get => GetValue(IsZVisibleProperty);
+        set => SetValue(IsZVisibleProperty, value);
     }
 
-    public bool AVisible
+    public bool IsAVisible
     {
-        get => GetValue(AVisibleProperty);
-        set => SetValue(AVisibleProperty, value);
+        get => GetValue(IsAVisibleProperty);
+        set => SetValue(IsAVisibleProperty, value);
     }
 
-    public bool BVisible
+    public bool IsBVisible
     {
-        get => GetValue(BVisibleProperty);
-        set => SetValue(BVisibleProperty, value);
+        get => GetValue(IsBVisibleProperty);
+        set => SetValue(IsBVisibleProperty, value);
     }
 
-    public bool CVisible
+    public bool IsCVisible
     {
-        get => GetValue(CVisibleProperty);
-        set => SetValue(CVisibleProperty, value);
+        get => GetValue(IsCVisibleProperty);
+        set => SetValue(IsCVisibleProperty, value);
     }
 
-    public bool UVisible
+    public bool IsUVisible
     {
-        get => GetValue(UVisibleProperty);
-        set => SetValue(UVisibleProperty, value);
+        get => GetValue(IsUVisibleProperty);
+        set => SetValue(IsUVisibleProperty, value);
     }
 
-    public bool VVisible
+    public bool IsVVisible
     {
-        get => GetValue(VVisibleProperty);
-        set => SetValue(VVisibleProperty, value);
+        get => GetValue(IsVVisibleProperty);
+        set => SetValue(IsVVisibleProperty, value);
     }
 
-    public bool WVisible
+    public bool IsWVisible
     {
-        get => GetValue(WVisibleProperty);
-        set => SetValue(WVisibleProperty, value);
+        get => GetValue(IsWVisibleProperty);
+        set => SetValue(IsWVisibleProperty, value);
     }
 
     public event EventHandler<GenericCommand>? ZeroCommandRequested;
