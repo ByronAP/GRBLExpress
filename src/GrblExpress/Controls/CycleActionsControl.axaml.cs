@@ -10,7 +10,7 @@ namespace GrblExpress.Controls;
 public partial class CycleActionsControl : UserControl
 {
     public static readonly StyledProperty<string> TitleProperty = AvaloniaProperty.Register<CycleActionsControl, string>(nameof(Title), defaultValue: "");
-    public static readonly StyledProperty<bool> TitleVisibleProperty = AvaloniaProperty.Register<CycleActionsControl, bool>(nameof(TitleVisible), defaultValue: false);
+    public static readonly StyledProperty<bool> IsTitleVisibleProperty = AvaloniaProperty.Register<CycleActionsControl, bool>(nameof(IsTitleVisible), defaultValue: false);
     public static readonly StyledProperty<Orientation> OrientationProperty = AvaloniaProperty.Register<CycleActionsControl, Orientation>(nameof(Orientation), defaultValue: Orientation.Horizontal);
 
     public string Title
@@ -19,10 +19,10 @@ public partial class CycleActionsControl : UserControl
         set => SetValue(TitleProperty, value);
     }
 
-    public bool TitleVisible
+    public bool IsTitleVisible
     {
-        get => GetValue(TitleVisibleProperty);
-        set => SetValue(TitleVisibleProperty, value);
+        get => GetValue(IsTitleVisibleProperty);
+        set => SetValue(IsTitleVisibleProperty, value);
     }
 
     public Orientation Orientation

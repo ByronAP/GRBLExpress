@@ -9,7 +9,7 @@
              x:Class="GrblExpress.Controls.CycleActionsControl">
 
   <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
-    <TextBlock IsVisible="{Binding TitleVisible}" Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
+    <TextBlock IsVisible="{Binding IsTitleVisible}" Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
     <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
       <StackPanel Orientation="{Binding Orientation}">
         <Button Content="Cycle Start" Width="90" Margin="5" Grid.Column="2" Command="{Binding CycleCommand}" CommandParameter="{x:Static types:GenericCommand.CycleStart}"/>
