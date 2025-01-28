@@ -10,8 +10,8 @@
     <TextBlock Text="{Binding Title}" FontWeight="SemiBold" Margin="2,0,0,2" HorizontalAlignment="Left"/>
     <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
       <StackPanel Orientation="Horizontal">
-        <local:PulldownTextBoxControl Name="CommandTextBox" MinWidth="150" PreviousEntries="{Binding PreviousCommands}" ReturnPressedRequested="PulldownTextBoxControl_ReturnPressedRequested"/>
-        <Button Content="Send" Click="Send_Button_Click" Margin="5,0,0,0"/>
+        <local:PulldownTextBoxControl IsEnabled="{Binding IsEnabled}" Name="CommandTextBox" MinWidth="150" PreviousEntries="{Binding PreviousCommands}" ReturnPressedRequested="PulldownTextBoxControl_ReturnPressedRequested"/>
+        <Button IsEnabled="{Binding IsEnabled}" Content="Send" Click="Send_Button_Click" Margin="5,0,0,0"/>
       </StackPanel>
     </Border>
   </StackPanel>

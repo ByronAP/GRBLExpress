@@ -8,7 +8,7 @@ namespace GrblExpress.Controls;
 public partial class MdiControl : UserControl
 {
     public static readonly StyledProperty<string> TitleProperty = AvaloniaProperty.Register<MdiControl, string>(nameof(Title), defaultValue: "MDI");
-    public static readonly StyledProperty<bool> EnabledProperty = AvaloniaProperty.Register<MdiControl, bool>(nameof(Enabled), defaultValue: true);
+    public static readonly StyledProperty<bool> IsEnabledProperty = AvaloniaProperty.Register<MdiControl, bool>(nameof(IsEnabled), defaultValue: true);
     public static readonly StyledProperty<List<string>> PreviousCommandsProperty = AvaloniaProperty.Register<PulldownTextBoxControl, List<string>>(nameof(PreviousCommands), defaultValue: ["hi", "hellooo", "bye", "goodbye"]);
 
     public event EventHandler<string>? MdiCommandRequested;
@@ -25,10 +25,10 @@ public partial class MdiControl : UserControl
         set => SetValue(TitleProperty, value);
     }
 
-    public bool Enabled
+    public new bool IsEnabled
     {
-        get => GetValue(EnabledProperty);
-        set => SetValue(EnabledProperty, value);
+        get => GetValue(IsEnabledProperty);
+        set => SetValue(IsEnabledProperty, value);
     }
 
     public MdiControl()
