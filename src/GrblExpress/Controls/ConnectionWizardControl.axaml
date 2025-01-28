@@ -11,16 +11,20 @@
     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2,0,0,0" HorizontalAlignment="Left">
       <HyperlinkButton Content="Connection Type" Margin="0,0,0,0" FontWeight="SemiBold" FontFeatures="Underline" Click="Step1_HyperlinkButton_Click"/>
       <ui:SymbolIcon Symbol="ChevronRight" FontSize="18" Width="{Binding $self.FontSize}" Height="{Binding $self.FontSize}" Margin="-10,0,10,0"/>
-      <HyperlinkButton Content="Configuration" IsEnabled="False" Margin="-10,0,0,0" FontWeight="SemiBold"/>
+      <HyperlinkButton Content="Configuration" IsEnabled="{Binding Step2Enabled}" Margin="-10,0,0,0" FontWeight="SemiBold" Click="Step2_HyperlinkButton_Click"/>
       <ui:SymbolIcon Symbol="ChevronRight" FontSize="18" Width="{Binding $self.FontSize}" Height="{Binding $self.FontSize}" Margin="-10,0,10,0"/>
-      <HyperlinkButton Content="Completion" IsEnabled="False" Margin="-10,0,10,0" FontWeight="SemiBold"/>
+      <HyperlinkButton Content="Completion" IsEnabled="{Binding Step3Enabled}" Margin="-10,0,10,0" FontWeight="SemiBold"/>
     </StackPanel>
     <Border Grid.Row="1"
             CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}"
             BorderThickness="1" Margin="1" Padding="5">
-      <StackPanel Orientation="Vertical">
-        <ContentControl Content="{Binding CurrentStepControl}"/>
-        <Button Foreground="{DynamicResource ToggleButtonForegroundChecked}" Background="{DynamicResource ToggleButtonBackgroundChecked}" Content="Next" HorizontalAlignment="Right" Margin="0,5,5,5" Click="Next_Button_Click" IsEnabled="True"/>
+      <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+          <ContentControl Content="{Binding CurrentStepControl}"/>
+          <ui:InfoBar Name="ErrorInfoBar" IsOpen="False" Severity="Error"/>          
+        </StackPanel>
+        <Button Foreground="{DynamicResource ToggleButtonForegroundChecked}" Background="{DynamicResource ToggleButtonBackgroundChecked}"
+                  Content="Next" HorizontalAlignment="Right" Margin="5,5,5,5" Click="Next_Button_Click" IsEnabled="True"/>
       </StackPanel>
     </Border>
   </Grid>

@@ -8,12 +8,12 @@ namespace GrblExpress.Controls;
 
 public partial class ConnectionWizardControl : UserControl
 {
-    public static readonly StyledProperty<ConnectionType> SelectedConnectionTypeProperty = AvaloniaProperty.Register<ConnectionWizardControl, ConnectionType>(nameof(SelectedConnectionType), defaultValue: ConnectionType.Serial);
+    public static readonly StyledProperty<ConnectionType?> SelectedConnectionTypeProperty = AvaloniaProperty.Register<ConnectionWizardControl, ConnectionType?>(nameof(SelectedConnectionType), defaultValue: ConnectionType.Serial);
     public static readonly StyledProperty<UserControl> CurrentStepControlProperty = AvaloniaProperty.Register<ConnectionWizardControl, UserControl>(nameof(CurrentStepControl));
     public static readonly StyledProperty<bool> Step2EnabledProperty = AvaloniaProperty.Register<ConnectionWizardControl, bool>(nameof(Step2Enabled), defaultValue: false);
     public static readonly StyledProperty<bool> Step3EnabledProperty = AvaloniaProperty.Register<ConnectionWizardControl, bool>(nameof(Step3Enabled), defaultValue: false);
 
-    public ConnectionType SelectedConnectionType
+    public ConnectionType? SelectedConnectionType
     {
         get => GetValue(SelectedConnectionTypeProperty);
         set => SetValue(SelectedConnectionTypeProperty, value);
@@ -46,34 +46,23 @@ public partial class ConnectionWizardControl : UserControl
 
     private void Next_Button_Click(object? sender, RoutedEventArgs e)
     {
-        // TODO : Validate the current step before moving to the next step
+        ErrorInfoBar.IsOpen = false;
 
         if (CurrentStepControl is ConnectionTypeSelectControl)
         {
+            // Validate the current step before moving to the next step
             var validationResult = ((ConnectionTypeSelectControl)CurrentStepControl).Validate();
             if (!validationResult.HasError)
             {
+                SelectedConnectionType = ((ConnectionTypeSelectControl)CurrentStepControl).SelectedConnectionType;
                 Step2Enabled = true;
-                // TODO : Load the next step based on the selected connection type
-                switch (SelectedConnectionType)
-                {
-                    case ConnectionType.Serial:
-                        //CurrentStepControl = new Control();
-                        break;
-                    case ConnectionType.Telnet:
-                        //CurrentStepControl = new Control();
-                        break;
-                    case ConnectionType.Websocket:
-                        //CurrentStepControl = new Control();
-                        break;
-                    default:
-                        // TODO : Show error message
-                        break;
-                }
+                // Load the next step based on the selected connection type
+                CurrentStepControl = GetStep2Control();
+
             }
             else
             {
-                // TODO : Show error message
+                ShowError(validationResult.ErrorMsg);
             }
 
         }
@@ -83,8 +72,49 @@ public partial class ConnectionWizardControl : UserControl
         //}
     }
 
+    private UserControl GetStep2Control()
+    {
+        switch (SelectedConnectionType)
+        {
+            case ConnectionType.Serial:
+                return new SerialConnectionOptionsControl();
+            case ConnectionType.Telnet:
+                return new TelnetConnectionOptionsControl();
+            case ConnectionType.Websocket:
+                return new WebsocketConnectionOptionsControl();
+            default:
+                Step2Enabled = false;
+                Step3Enabled = false;
+                return new ConnectionTypeSelectControl();
+        }
+    }
+
+    private void ShowError(string message)
+    {
+        ErrorInfoBar.Message = message;
+        ErrorInfoBar.IsOpen = true;
+    }
+
     private void Step1_HyperlinkButton_Click(object? sender, RoutedEventArgs e)
     {
+        if (CurrentStepControl is ConnectionTypeSelectControl) return;
+
+        SelectedConnectionType = null;
+        Step2Enabled = false;
+        Step3Enabled = false;
+
         CurrentStepControl = new ConnectionTypeSelectControl();
+    }
+
+    private void Step2_HyperlinkButton_Click(object? sender, RoutedEventArgs e)
+    {
+        if (CurrentStepControl is SerialConnectionOptionsControl ||
+            CurrentStepControl is TelnetConnectionOptionsControl ||
+            CurrentStepControl is WebsocketConnectionOptionsControl) return;
+
+        Step2Enabled = true;
+        Step3Enabled = false;
+
+        CurrentStepControl = GetStep2Control();
     }
 }
