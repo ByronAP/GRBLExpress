@@ -10,8 +10,8 @@ public partial class ConnectionWizardControl : UserControl
 {
     public static readonly StyledProperty<ConnectionType?> SelectedConnectionTypeProperty = AvaloniaProperty.Register<ConnectionWizardControl, ConnectionType?>(nameof(SelectedConnectionType), defaultValue: ConnectionType.Serial);
     public static readonly StyledProperty<UserControl> CurrentStepControlProperty = AvaloniaProperty.Register<ConnectionWizardControl, UserControl>(nameof(CurrentStepControl));
-    public static readonly StyledProperty<bool> Step2EnabledProperty = AvaloniaProperty.Register<ConnectionWizardControl, bool>(nameof(Step2Enabled), defaultValue: false);
-    public static readonly StyledProperty<bool> Step3EnabledProperty = AvaloniaProperty.Register<ConnectionWizardControl, bool>(nameof(Step3Enabled), defaultValue: false);
+    public static readonly StyledProperty<bool> IsStep2EnabledProperty = AvaloniaProperty.Register<ConnectionWizardControl, bool>(nameof(IsStep2Enabled), defaultValue: false);
+    public static readonly StyledProperty<bool> IsStep3EnabledProperty = AvaloniaProperty.Register<ConnectionWizardControl, bool>(nameof(IsStep3Enabled), defaultValue: false);
 
     public ConnectionType? SelectedConnectionType
     {
@@ -25,16 +25,16 @@ public partial class ConnectionWizardControl : UserControl
         set => SetValue(CurrentStepControlProperty, value);
     }
 
-    public bool Step2Enabled
+    public bool IsStep2Enabled
     {
-        get => GetValue(Step2EnabledProperty);
-        set => SetValue(Step2EnabledProperty, value);
+        get => GetValue(IsStep2EnabledProperty);
+        set => SetValue(IsStep2EnabledProperty, value);
     }
 
-    public bool Step3Enabled
+    public bool IsStep3Enabled
     {
-        get => GetValue(Step3EnabledProperty);
-        set => SetValue(Step3EnabledProperty, value);
+        get => GetValue(IsStep3EnabledProperty);
+        set => SetValue(IsStep3EnabledProperty, value);
     }
 
     public ConnectionWizardControl()
@@ -55,7 +55,7 @@ public partial class ConnectionWizardControl : UserControl
             if (!validationResult.HasError)
             {
                 SelectedConnectionType = ((ConnectionTypeSelectControl)CurrentStepControl).SelectedConnectionType;
-                Step2Enabled = true;
+                IsStep2Enabled = true;
                 // Load the next step based on the selected connection type
                 CurrentStepControl = GetStep2Control();
 
@@ -83,8 +83,8 @@ public partial class ConnectionWizardControl : UserControl
             case ConnectionType.Websocket:
                 return new WebsocketConnectionOptionsControl();
             default:
-                Step2Enabled = false;
-                Step3Enabled = false;
+                IsStep2Enabled = false;
+                IsStep3Enabled = false;
                 return new ConnectionTypeSelectControl();
         }
     }
@@ -100,8 +100,8 @@ public partial class ConnectionWizardControl : UserControl
         if (CurrentStepControl is ConnectionTypeSelectControl) return;
 
         SelectedConnectionType = null;
-        Step2Enabled = false;
-        Step3Enabled = false;
+        IsStep2Enabled = false;
+        IsStep3Enabled = false;
 
         CurrentStepControl = new ConnectionTypeSelectControl();
     }
@@ -112,8 +112,8 @@ public partial class ConnectionWizardControl : UserControl
             CurrentStepControl is TelnetConnectionOptionsControl ||
             CurrentStepControl is WebsocketConnectionOptionsControl) return;
 
-        Step2Enabled = true;
-        Step3Enabled = false;
+        IsStep2Enabled = true;
+        IsStep3Enabled = false;
 
         CurrentStepControl = GetStep2Control();
     }

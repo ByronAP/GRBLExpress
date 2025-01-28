@@ -11,9 +11,9 @@
     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2,0,0,0" HorizontalAlignment="Left">
       <HyperlinkButton Content="Connection Type" Margin="0,0,0,0" FontWeight="SemiBold" FontFeatures="Underline" Click="Step1_HyperlinkButton_Click"/>
       <ui:SymbolIcon Symbol="ChevronRight" FontSize="18" Width="{Binding $self.FontSize}" Height="{Binding $self.FontSize}" Margin="-10,0,10,0"/>
-      <HyperlinkButton Content="Configuration" IsEnabled="{Binding Step2Enabled}" Margin="-10,0,0,0" FontWeight="SemiBold" Click="Step2_HyperlinkButton_Click"/>
+      <HyperlinkButton Content="Configuration" IsEnabled="{Binding IsStep2Enabled}" Margin="-10,0,0,0" FontWeight="SemiBold" Click="Step2_HyperlinkButton_Click"/>
       <ui:SymbolIcon Symbol="ChevronRight" FontSize="18" Width="{Binding $self.FontSize}" Height="{Binding $self.FontSize}" Margin="-10,0,10,0"/>
-      <HyperlinkButton Content="Completion" IsEnabled="{Binding Step3Enabled}" Margin="-10,0,10,0" FontWeight="SemiBold"/>
+      <HyperlinkButton Content="Completion" IsEnabled="{Binding IsStep3Enabled}" Margin="-10,0,10,0" FontWeight="SemiBold"/>
     </StackPanel>
     <Border Grid.Row="1"
             CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}"
