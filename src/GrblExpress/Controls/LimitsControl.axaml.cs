@@ -31,15 +31,15 @@ public partial class LimitsControl : UserControl
     public static readonly StyledProperty<double> WMaxProperty = AvaloniaProperty.Register<LimitsControl, double>(nameof(WMax), defaultValue: 0);
 
     // Axis Visibility
-    public static readonly StyledProperty<bool> XVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(XVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> YVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(YVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> ZVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(ZVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> AVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(AVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> BVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(BVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> CVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(CVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> UVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(UVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> VVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(VVisible), defaultValue: true);
-    public static readonly StyledProperty<bool> WVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(WVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsXVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsXVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsYVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsYVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsZVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsZVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsAVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsAVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsBVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsBVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsCVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsCVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsUVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsUVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsVVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsVVisible), defaultValue: true);
+    public static readonly StyledProperty<bool> IsWVisibleProperty = AvaloniaProperty.Register<LimitsControl, bool>(nameof(IsWVisible), defaultValue: true);
 
     public string Title
     {
@@ -161,58 +161,58 @@ public partial class LimitsControl : UserControl
         set => SetValue(WMaxProperty, value);
     }
 
-    public bool XVisible
+    public bool IsXVisible
     {
-        get => GetValue(XVisibleProperty);
-        set => SetValue(XVisibleProperty, value);
+        get => GetValue(IsXVisibleProperty);
+        set => SetValue(IsXVisibleProperty, value);
     }
 
-    public bool YVisible
+    public bool IsYVisible
     {
-        get => GetValue(YVisibleProperty);
-        set => SetValue(YVisibleProperty, value);
+        get => GetValue(IsYVisibleProperty);
+        set => SetValue(IsYVisibleProperty, value);
     }
 
-    public bool ZVisible
+    public bool IsZVisible
     {
-        get => GetValue(ZVisibleProperty);
-        set => SetValue(ZVisibleProperty, value);
+        get => GetValue(IsZVisibleProperty);
+        set => SetValue(IsZVisibleProperty, value);
     }
 
-    public bool AVisible
+    public bool IsAVisible
     {
-        get => GetValue(AVisibleProperty);
-        set => SetValue(AVisibleProperty, value);
+        get => GetValue(IsAVisibleProperty);
+        set => SetValue(IsAVisibleProperty, value);
     }
 
-    public bool BVisible
+    public bool IsBVisible
     {
-        get => GetValue(BVisibleProperty);
-        set => SetValue(BVisibleProperty, value);
+        get => GetValue(IsBVisibleProperty);
+        set => SetValue(IsBVisibleProperty, value);
     }
 
-    public bool CVisible
+    public bool IsCVisible
     {
-        get => GetValue(CVisibleProperty);
-        set => SetValue(CVisibleProperty, value);
+        get => GetValue(IsCVisibleProperty);
+        set => SetValue(IsCVisibleProperty, value);
     }
 
-    public bool UVisible
+    public bool IsUVisible
     {
-        get => GetValue(UVisibleProperty);
-        set => SetValue(UVisibleProperty, value);
+        get => GetValue(IsUVisibleProperty);
+        set => SetValue(IsUVisibleProperty, value);
     }
 
-    public bool VVisible
+    public bool IsVVisible
     {
-        get => GetValue(VVisibleProperty);
-        set => SetValue(VVisibleProperty, value);
+        get => GetValue(IsVVisibleProperty);
+        set => SetValue(IsVVisibleProperty, value);
     }
 
-    public bool WVisible
+    public bool IsWVisible
     {
-        get => GetValue(WVisibleProperty);
-        set => SetValue(WVisibleProperty, value);
+        get => GetValue(IsWVisibleProperty);
+        set => SetValue(IsWVisibleProperty, value);
     }
 
     public LimitsControl()

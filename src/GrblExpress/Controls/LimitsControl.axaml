@@ -11,7 +11,7 @@
     <Border CornerRadius="{DynamicResource ControlCornerRadius}" BorderBrush="{DynamicResource SystemFillColorAttentionBrush}" BorderThickness="1" Margin="1" Padding="5">
       <StackPanel Orientation="Vertical">
         <!-- X Axis -->
-        <Grid Name="XAxis" IsVisible="{Binding XVisible}">
+        <Grid Name="XAxis" IsVisible="{Binding IsXVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -24,7 +24,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding XMax}"/>
         </Grid>
         <!-- Y Axis -->
-        <Grid IsVisible="{Binding YVisible}">
+        <Grid IsVisible="{Binding IsYVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -37,7 +37,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding YMax, Mode=TwoWay}"/>
         </Grid>
         <!-- Z Axis -->
-        <Grid IsVisible="{Binding ZVisible}">
+        <Grid IsVisible="{Binding IsZVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -50,7 +50,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding ZMax, Mode=TwoWay}"/>
         </Grid>
         <!-- A Axis -->
-        <Grid IsVisible="{Binding AVisible}">
+        <Grid IsVisible="{Binding IsAVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -63,7 +63,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding AMax, Mode=TwoWay}"/>
         </Grid>
         <!-- B Axis -->
-        <Grid IsVisible="{Binding BVisible}">
+        <Grid IsVisible="{Binding IsBVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -76,7 +76,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding BMax, Mode=TwoWay}"/>
         </Grid>
         <!-- C Axis -->
-        <Grid IsVisible="{Binding CVisible}">
+        <Grid IsVisible="{Binding IsCVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -89,7 +89,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding CMax, Mode=TwoWay}"/>
         </Grid>
         <!-- U Axis -->
-        <Grid IsVisible="{Binding UVisible}">
+        <Grid IsVisible="{Binding IsUVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -102,7 +102,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding UMax, Mode=TwoWay}"/>
         </Grid>
         <!-- V Axis -->
-        <Grid IsVisible="{Binding VVisible}">
+        <Grid IsVisible="{Binding IsVVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
@@ -115,7 +115,7 @@
           <TextBox Width="65" Margin="0,5,0,5" Grid.Column="3" IsReadOnly="{Binding ReadOnly}" Text="{Binding VMax, Mode=TwoWay}"/>
         </Grid>
         <!-- W Axis -->
-        <Grid IsVisible="{Binding WVisible}">
+        <Grid IsVisible="{Binding IsWVisible}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
