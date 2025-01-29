@@ -1,6 +1,8 @@
-﻿namespace GrblExpress.Comms.Telnet
+﻿using GrblExpress.Common.Interfaces;
+
+namespace GrblExpress.Common.Objects
 {
-    public class TelnetOptions
+    public class TelnetOptions : ITelnetOptions
     {
         private string _host = string.Empty;
         private int _port = TelnetConstants.DefaultPort;                    // Default value

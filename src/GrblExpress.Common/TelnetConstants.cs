@@ -1,4 +1,4 @@
-﻿namespace GrblExpress.Comms.Telnet
+﻿namespace GrblExpress.Common
 {
     public static class TelnetConstants
     {
