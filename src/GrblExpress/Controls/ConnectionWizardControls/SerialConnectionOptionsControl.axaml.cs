@@ -5,6 +5,7 @@ using GrblExpress.Common.Objects;
 using GrblExpress.Common.Types;
 using System;
 using System.IO.Ports;
+using System.Linq;
 
 namespace GrblExpress.Controls.ConnectionWizardControls;
 
@@ -20,7 +21,7 @@ public partial class SerialConnectionOptionsControl : UserControl
     }
 
     public string[] AvailablePortNames => SerialPortHelpers.ListAvailablePorts();
-    public BaudRate[] AvailableBaudRates => Enum.GetValues<BaudRate>();
+    public BaudRate[] AvailableBaudRates => [.. Enum.GetValues<BaudRate>().Where(br => br != BaudRate.None)];
     public DataBits[] AvailableDataBits => Enum.GetValues<DataBits>();
     public Parity[] AvailableParities => Enum.GetValues<Parity>();
     public StopBits[] AvailableStopBits => Enum.GetValues<StopBits>();
