@@ -1,7 +1,7 @@
 ﻿using GrblExpress.Common.Types;
 using System.IO.Ports;
 
-namespace GrblExpress.Comms.Serial
+namespace GrblExpress.Common.Objects
 {
     public static class SerialPortHelpers
     {

@@ -1,9 +1,10 @@
-﻿using GrblExpress.Common.Types;
+﻿using GrblExpress.Common.Interfaces;
+using GrblExpress.Common.Types;
 using System.IO.Ports;
 
-namespace GrblExpress.Comms.Serial
+namespace GrblExpress.Common.Objects
 {
-    public class SerialPortOptions
+    public class SerialPortOptions : ISerialPortOptions
     {
         private string _portName = string.Empty;
         private BaudRate _baudRate = SerialPortConstants.DefaultBaudRate;           // Default value
@@ -25,7 +26,7 @@ namespace GrblExpress.Comms.Serial
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException("Port name cannot be null or whitespace.", nameof(value));
-                if (!SerialPortHelpers.ListAvailablePorts().Contains(value))
+                if (!SerialPortHelpers.ListAvailablePorts().Any(port => port.Equals(value, StringComparison.OrdinalIgnoreCase)))
                     throw new ArgumentException("Port name is not available.", nameof(value));
                 _portName = value;
             }
