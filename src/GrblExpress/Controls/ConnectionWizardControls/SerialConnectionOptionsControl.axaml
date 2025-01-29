@@ -2,6 +2,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:local="clr-namespace:GrblExpress.Controls.ConnectionWizardControls"
+             xmlns:res="clr-namespace:GrblExpress.Resources;assembly=GrblExpress"
+             x:DataType="local:SerialConnectionOptionsControl"
              x:Class="GrblExpress.Controls.ConnectionWizardControls.SerialConnectionOptionsControl">
-Serial connection options
+  <StackPanel Spacing="8">
+        <TextBlock Text="Serial Port Settings" FontWeight="Bold" />
+
+        <TextBlock Text="Port Name:" />
+        <ComboBox ItemsSource="{Binding AvailablePortNames}" SelectedItem="{Binding SerialPortOptions.PortName}" />
+
+        <TextBlock Text="Baud Rate:" />
+        <ComboBox ItemsSource="{Binding AvailableBaudRates}" SelectedItem="{Binding SerialPortOptions.BaudRate}" />
+
+        <TextBlock Text="Data Bits:" />
+        <ComboBox ItemsSource="{Binding AvailableDataBits}" SelectedItem="{Binding SerialPortOptions.DataBits}" />
+
+        <TextBlock Text="Parity:" />
+        <ComboBox ItemsSource="{Binding AvailableParities}" SelectedItem="{Binding SerialPortOptions.Parity}" />
+
+        <TextBlock Text="Stop Bits:" />
+        <ComboBox ItemsSource="{Binding AvailableStopBits}" SelectedItem="{Binding SerialPortOptions.StopBits}" />
+
+        <TextBlock Text="Handshake:" />
+        <ComboBox ItemsSource="{Binding AvailableHandshakes}" SelectedItem="{Binding SerialPortOptions.Handshake}" />
+
+        <TextBlock Text="Reset Mode:" />
+        <ComboBox ItemsSource="{Binding AvailableResetModes}" SelectedItem="{Binding SerialPortOptions.ResetMode}" />
+
+        <TextBlock Text="Read Timeout (ms):" />
+        <NumericUpDown Value="{Binding SerialPortOptions.ReadTimeoutMs}" Minimum="25" />
+
+        <TextBlock Text="Write Timeout (ms):" />
+        <NumericUpDown Value="{Binding SerialPortOptions.WriteTimeoutMs}" Minimum="25" />
+
+        <TextBlock Text="TX Buffer Size:" />
+        <NumericUpDown Value="{Binding SerialPortOptions.TXBufferSize}" Minimum="512" />
+
+        <TextBlock Text="RX Buffer Size:" />
+        <NumericUpDown Value="{Binding SerialPortOptions.RXBufferSize}" Minimum="256" />
+
+        <TextBlock Text="Reset Delay (ms):" />
+        <NumericUpDown Value="{Binding SerialPortOptions.ResetDelayMs}" Minimum="0" />
+    </StackPanel>
 </UserControl>

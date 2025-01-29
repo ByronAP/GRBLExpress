@@ -1,12 +1,36 @@
+using Avalonia;
 using Avalonia.Controls;
+using GrblExpress.Common.Interfaces;
+using GrblExpress.Common.Objects;
+using GrblExpress.Common.Types;
+using System;
+using System.IO.Ports;
 
 namespace GrblExpress.Controls.ConnectionWizardControls;
 
 public partial class SerialConnectionOptionsControl : UserControl
 {
+    public static readonly StyledProperty<ISerialPortOptions> SerialPortOptionsProperty =
+        AvaloniaProperty.Register<SerialConnectionOptionsControl, ISerialPortOptions>(nameof(SerialPortOptions));
+
+    public ISerialPortOptions SerialPortOptions
+    {
+        get => GetValue(SerialPortOptionsProperty);
+        set => SetValue(SerialPortOptionsProperty, value);
+    }
+
+    public string[] AvailablePortNames => SerialPortHelpers.ListAvailablePorts();
+    public BaudRate[] AvailableBaudRates => Enum.GetValues<BaudRate>();
+    public DataBits[] AvailableDataBits => Enum.GetValues<DataBits>();
+    public Parity[] AvailableParities => Enum.GetValues<Parity>();
+    public StopBits[] AvailableStopBits => Enum.GetValues<StopBits>();
+    public Handshake[] AvailableHandshakes => Enum.GetValues<Handshake>();
+    public DeviceResetMode[] AvailableResetModes => Enum.GetValues<DeviceResetMode>();
+
     public SerialConnectionOptionsControl()
     {
-        DataContext = this;
         InitializeComponent();
+        SerialPortOptions = new SerialPortOptions();
+        DataContext = this;
     }
 }
