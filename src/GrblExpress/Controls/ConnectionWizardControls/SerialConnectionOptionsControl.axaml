@@ -72,6 +72,11 @@
         <TextBlock Text="Advanced" FontWeight="Bold" Margin="0,10,0,4"/>
         
         <!-- Lay out advanced NumericUpDowns in a 2-column Grid -->
+      <ui:SettingsExpander Header="Advanced Options"
+                     IconSource="Settings"
+                     Description="Apps might have their own settings"
+                     Name="SettingsExpander">
+
         <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" RowDefinitions="Auto,Auto,Auto">
             <!-- First row -->
             <TextBlock Text="Read Timeout (ms):" 
@@ -106,5 +111,6 @@
                            Minimum="0" 
                            Grid.Column="1" Grid.Row="2"/>
         </Grid>
+        </ui:SettingsExpander>
     </StackPanel>
 </UserControl>
