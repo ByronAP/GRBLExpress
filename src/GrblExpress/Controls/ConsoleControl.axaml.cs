@@ -2,13 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
-using Avalonia.Threading;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 
 namespace GrblExpress.Controls;
 
@@ -38,7 +36,7 @@ public partial class ConsoleControl : UserControl
             {
                 var lines = value.Split('\n');
                 value = string.Join('\n', lines.Skip(1));
-                Debug.Print("Trimming lines");
+                //Debug.Print("Trimming lines");
             }
 
             if (value.Length > MaxChars)
@@ -53,7 +51,7 @@ public partial class ConsoleControl : UserControl
                 {
                     value = value[^MaxChars..];
                 }
-                Debug.Print("Trimming characters");
+                //Debug.Print("Trimming characters");
             }
 
             SetValue(TextProperty, value);
@@ -103,28 +101,28 @@ public partial class ConsoleControl : UserControl
 
     private bool _autoScrollSuspended;
 
-    private readonly Timer _testTimer;
+    //private readonly Timer _testTimer;
 
-    private int i = 0;
+    //private int i = 0;
 
     public ConsoleControl()
     {
         DataContext = this;
         InitializeComponent();
 
-        _testTimer = new Timer(_ =>
-        {
-            if (i >= int.MaxValue - 1) i = 0;
+        //_testTimer = new Timer(_ =>
+        //{
+        //    if (i >= int.MaxValue - 1) i = 0;
 
-            var randomString = new string(Enumerable.Range(0, 50).Select(_ => (char)('a' + new Random().Next(0, 26))).ToArray());
+        //    var randomString = new string(Enumerable.Range(0, 50).Select(_ => (char)('a' + new Random().Next(0, 26))).ToArray());
 
-            Dispatcher.UIThread.Post(() =>
-            {
-                Text += $"Test-{i}-{randomString}\n";
-            });
+        //    Dispatcher.UIThread.Post(() =>
+        //    {
+        //        Text += $"Test-{i}-{randomString}\n";
+        //    });
 
-            i++;
-        }, null, 2000, 100);
+        //    i++;
+        //}, null, 2000, 100);
     }
 
     private void ScrollViewer_ScrollChanged(object? sender, ScrollChangedEventArgs e)
@@ -148,6 +146,8 @@ public partial class ConsoleControl : UserControl
 
     private async void Save_Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        if (string.IsNullOrWhiteSpace(Text)) return;
+
         try
         {
             // TODO : Get the StorageProvider via DI
@@ -173,5 +173,10 @@ public partial class ConsoleControl : UserControl
         {
             Debug.Print(ex.Message);
         }
+    }
+
+    private void TextBox_TextChanged(object? sender, TextChangedEventArgs e)
+    {
+        SaveButton.IsEnabled = !string.IsNullOrWhiteSpace(Text);
     }
 }

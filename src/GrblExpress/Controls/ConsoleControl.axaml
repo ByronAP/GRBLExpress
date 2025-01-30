@@ -24,7 +24,7 @@
           </ToggleButton>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" Margin="0,0,2,2">   
-          <Button Margin="2" Padding="2" Width="33.33" Height="34" ToolTip.Tip="Save" Click="Save_Button_Click">
+          <Button Name="SaveButton" Margin="2" Padding="2" Width="33.33" Height="34" ToolTip.Tip="Save" Click="Save_Button_Click">
             <ui:SymbolIcon Symbol="Save" Width="{Binding $parent.Width}" Height="{Binding $parent.Height}" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
           </Button>
           <Button Margin="2" Padding="2" Width="33.33" Height="34" ToolTip.Tip="Clear" Click="Clear_Button_Click">
@@ -32,7 +32,7 @@
           </Button>        
         </StackPanel>
         <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Name="ConsoleTextScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged" Margin="5,0,5,5">
-          <TextBox BorderThickness="0" Name="ConsoleTextBox" Text="{Binding Text}" IsReadOnly="True" Margin="0" Padding="0"/>
+          <TextBox BorderThickness="0" Name="ConsoleTextBox" Text="{Binding Text}" IsReadOnly="True" Margin="0" Padding="0" TextChanged="TextBox_TextChanged"/>
         </ScrollViewer>
       </Grid>
     </Border>
